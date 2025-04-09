@@ -21,4 +21,4 @@ RUN pip3 install --break-system-packages -r requirements.txt
 EXPOSE 8000
 
 # Start the PHP built-in server
-CMD ["php", "-S", "0.0.0.0:$PORT", "-t", "."]
+CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t ."]
