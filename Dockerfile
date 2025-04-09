@@ -15,7 +15,7 @@ WORKDIR /app
 COPY . .
 
 # Install Python dependencies using pip3
-RUN pip3 install -r requirements.txt
+RUN pip3 install --break-system-packages -r requirements.txt
 
 # Expose the port (Railway will provide $PORT)
 EXPOSE 8000
