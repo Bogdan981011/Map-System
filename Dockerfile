@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # RUN composer install
 
+# Install PHP extensions needed for MySQL (including pdo_mysql)
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Set the working directory
 WORKDIR /app
 
