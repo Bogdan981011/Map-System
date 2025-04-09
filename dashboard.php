@@ -388,6 +388,7 @@
     // Fetch the JSON data from data_graph.php
     $jsonData = file_get_contents($dataGraphUrl);
     if ($jsonData === false) {
+        error_log("Failed to fetch data from " . $dataGraphUrl);
         die("Error fetching data from data_graph.php");
     }
 
