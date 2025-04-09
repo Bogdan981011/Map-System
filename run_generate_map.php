@@ -1,5 +1,5 @@
 <?php
-require_once "../bd.php";
+require_once "bd.php";
 require_once "calc_fonctions.php";
 
 // country score = sum i=1->n (question values_i x country data_i)
