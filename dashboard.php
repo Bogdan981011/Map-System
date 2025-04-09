@@ -375,7 +375,7 @@
   <!-- PHP: Checking for "country" and fetching data (same as your original code) -->
   <?php
 
-    include '../navbar.php';
+    //include '../navbar.php';
 
     if (!isset($_GET['country'])) {
         die("No country specified.");
