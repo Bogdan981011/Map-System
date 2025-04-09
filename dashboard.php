@@ -383,7 +383,7 @@
     $country = $_GET['country'];
 
     // Build the URL to data_graph.php with the country parameter
-    $dataGraphUrl = "http://localhost/payspedia_v2/pageweb/datavizio/data_graph.php?country=" . urlencode($country);
+    $dataGraphUrl = "https://map-system-production.up.railway.app/data_graph.php?country=" . urlencode($country);
 
     // Fetch the JSON data from data_graph.php
     $jsonData = file_get_contents($dataGraphUrl);
