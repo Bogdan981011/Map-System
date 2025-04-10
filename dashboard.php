@@ -385,7 +385,11 @@
     $country = $_GET['country'];
 
     // Build the URL to data_graph.php with the country parameter
-    $dataGraphUrl = "https://map-system-production.up.railway.app/data_graph.php?country=" . urlencode($country);
+    $protocol = 'http'; // Use HTTP internally.
+    $port = getenv('PORT') ?: '8080';
+    $dataGraphUrl = "{$protocol}://127.0.0.1:{$port}/data_graph.php?country=" . urlencode($country);
+    error_log("Dashboard: Attempting to fetch data from (internal URL): " . $dataGraphUrl);
+
     error_log("Dashboard: Attempting to fetch data from: " . $dataGraphUrl);
 
     // Initialize cURL.
