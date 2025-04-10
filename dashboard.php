@@ -375,32 +375,66 @@
   <!-- PHP: Checking for "country" and fetching data (same as your original code) -->
   <?php
 
-    //include '../navbar.php';
+    // include navbar.php
 
+    // Check for 'country' parameter in the URL.
     if (!isset($_GET['country'])) {
-        die("No country specified.");
+      error_log("Dashboard Error: Missing 'country' parameter in URL.");
+      die("No country specified.");
     }
     $country = $_GET['country'];
 
     // Build the URL to data_graph.php with the country parameter
     $dataGraphUrl = "https://map-system-production.up.railway.app/data_graph.php?country=" . urlencode($country);
+    error_log("Dashboard: Attempting to fetch data from: " . $dataGraphUrl);
 
-    // Fetch the JSON data from data_graph.php
-    $jsonData = file_get_contents($dataGraphUrl);
-    if ($jsonData === false) {
-        error_log("Failed to fetch data from " . $dataGraphUrl);
-        die("Error fetching data from data_graph.php");
+    // Initialize cURL.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $dataGraphUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Set timeout to 10 seconds.
+
+    $result = curl_exec($ch);
+
+    // Check if the request failed.
+    if ($result === false) {
+        $error_msg = curl_error($ch);
+        error_log("Dashboard cURL Error: " . $error_msg);
+        curl_close($ch);
+        die("Error fetching data: " . $error_msg);
     }
 
-    // Optionally, log or process the fetched JSON data
-    error_log("Data received from data_graph.php: " . $jsonData);
+    // Check for HTTP response code.
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if ($http_code !== 200) {
+        error_log("Dashboard Error: Received HTTP code {$http_code} from {$dataGraphUrl}");
+        curl_close($ch);
+        die("Error: Unexpected HTTP code {$http_code} when fetching data.");
+    }
 
-    // Output the JSON data (or further process it as needed)
+    curl_close($ch);
+    error_log("Dashboard: Successfully fetched data: " . $result);
+
+    // Decode the JSON response.
+    $jsonData = json_decode($result, true);
+    if ($jsonData === null) {
+      $jsonError = json_last_error_msg();
+      error_log("Dashboard JSON Error: " . $jsonError);
+      die("Error decoding JSON: " . $jsonError);
+    }
+
+    // Log the structured data
+    error_log("Data received from data_graph.php: " . print_r($jsonData, true));
+
+    // Output the page as HTML.
     header('Content-Type: text/html');
-    // Getting data
-    $data = json_decode($jsonData, true);
 
-  ?>
+    // Use the already-decoded data.
+    $data = $jsonData;
+
+    // Continue with your dashboard code that uses $data...
+?>
+
 
   <header>
     <h1>Tableau de Bord Intéractif</h1>
@@ -2708,7 +2742,6 @@ function initializeHistogramChartV2(config) {
   // ===================== Main Script =====================
 
     var chartData = <?php echo json_encode($data); ?>;
-    console.log(chartData);
 
     // Example usage of your existing chart initialization functions:
     var barChart = initializeDynamicChartV3({
