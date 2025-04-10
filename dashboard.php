@@ -393,7 +393,14 @@
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $dataGraphUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 120); // Set timeout to 10 seconds.
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120); // Set timeout to 120 seconds.
+
+    // Follow HTTP redirects (like 301 to HTTPS) automatically.
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+    // Disable SSL certificate verification (for internal or debugging use only!)
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 
     $result = curl_exec($ch);
 
