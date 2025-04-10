@@ -389,13 +389,6 @@
     include 'data_graph.php';
     $jsonResult = ob_get_clean();
 
-    // For debugging: output the raw result and halt execution
-    var_dump($jsonResult);
-    exit;
-
-    // Log the raw output for debugging.
-    error_log("Raw output from data_graph.php: [" . $jsonResult . "]");
-
     // Decode the JSON response.
     $jsonData = json_decode($jsonResult, true);
     if ($jsonData === null) {
