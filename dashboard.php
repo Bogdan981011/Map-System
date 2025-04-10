@@ -385,8 +385,7 @@
     $country = $_GET['country'];
 
     // Build the URL to data_graph.php with the country parameter
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    $dataGraphUrl = $protocol . '://' . $_SERVER['HTTP_HOST'] . '/data_graph.php?country=' . urlencode($country);
+    $dataGraphUrl = "https://map-system-production.up.railway.app/data_graph.php?country=" . urlencode($country);
 
     error_log("Dashboard: Attempting to fetch data from: " . $dataGraphUrl);
 
