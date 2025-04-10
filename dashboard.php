@@ -390,7 +390,7 @@
     $jsonResult = ob_get_clean();
 
     // Decode the JSON response.
-    $jsonData = json_decode($result, true);
+    $jsonData = json_decode($jsonResult, true);
     if ($jsonData === null) {
       $jsonError = json_last_error_msg();
       error_log("Dashboard JSON Error: " . $jsonError);
