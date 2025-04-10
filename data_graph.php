@@ -77,6 +77,8 @@ foreach($data_tables as $table => $columns){
 
 
 // Set header and echo JSON encoded data
-header('Content-Type: application/json');
+if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) {
+    header('Content-Type: application/json');
+}
 echo json_encode($data, JSON_PRETTY_PRINT);
 ?>
