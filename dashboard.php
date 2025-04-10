@@ -389,6 +389,9 @@
     include 'data_graph.php';
     $jsonResult = ob_get_clean();
 
+    // Log the raw output for debugging.
+    error_log("Raw output from data_graph.php: [" . $jsonResult . "]");
+
     // Decode the JSON response.
     $jsonData = json_decode($jsonResult, true);
     if ($jsonData === null) {
@@ -407,7 +410,7 @@
     $data = $jsonData;
 
     // Continue with your dashboard code that uses $data...
-?>
+  ?>
 
 
   <header>
