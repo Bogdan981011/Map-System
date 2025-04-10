@@ -392,7 +392,7 @@
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $dataGraphUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Set timeout to 10 seconds.
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120); // Set timeout to 10 seconds.
 
     $result = curl_exec($ch);
 
