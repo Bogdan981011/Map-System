@@ -390,41 +390,10 @@
     $dataGraphUrl = "{$protocol}://127.0.0.1:{$port}/data_graph.php?country=" . urlencode($country);
     error_log("Dashboard: Attempting to fetch data from (internal URL): " . $dataGraphUrl);
 
-    error_log("Dashboard: Attempting to fetch data from: " . $dataGraphUrl);
-
-    // Initialize cURL.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $dataGraphUrl);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 120); // Set timeout to 120 seconds.
-
-    // Follow HTTP redirects (like 301 to HTTPS) automatically.
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-
-    // Disable SSL certificate verification (for internal or debugging use only!)
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-
-    $result = curl_exec($ch);
-
-    // Check if the request failed.
-    if ($result === false) {
-        $error_msg = curl_error($ch);
-        error_log("Dashboard cURL Error: " . $error_msg);
-        curl_close($ch);
-        die("Error fetching data: " . $error_msg);
-    }
-
-    // Check for HTTP response code.
-    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    if ($http_code !== 200) {
-        error_log("Dashboard Error: Received HTTP code {$http_code} from {$dataGraphUrl}");
-        curl_close($ch);
-        die("Error: Unexpected HTTP code {$http_code} when fetching data.");
-    }
-
-    curl_close($ch);
-    error_log("Dashboard: Successfully fetched data: " . $result);
+    // Start output buffering to capture data_graph.php output.
+    ob_start();
+    include 'data_graph.php';
+    $jsonResult = ob_get_clean();
 
     // Decode the JSON response.
     $jsonData = json_decode($result, true);
