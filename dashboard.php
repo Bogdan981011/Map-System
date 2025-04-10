@@ -385,7 +385,7 @@
     $country = $_GET['country'];
 
     // Build the URL to data_graph.php with the country parameter
-    $dataGraphUrl = "https://map-system-production.up.railway.app/data_graph.php?country=" . urlencode($country);
+    $dataGraphUrl = "https://127.0.0.1:8080/data_graph.php?country=" . urlencode($country);
 
     error_log("Dashboard: Attempting to fetch data from: " . $dataGraphUrl);
 
