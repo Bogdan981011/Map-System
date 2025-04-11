@@ -375,6 +375,10 @@
   <!-- PHP: Checking for "country" and fetching data (same as your original code) -->
   <?php
 
+    // Disable error reporting (or limit it to errors only, excluding warnings and notices)
+    ini_set('display_errors', 0);
+    error_reporting(0);
+
     include 'navbar.php';
 
     if (!isset($_GET['country'])) {
