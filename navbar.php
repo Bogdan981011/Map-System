@@ -2,13 +2,7 @@
 <header>
     <div class="menu-bar">
     <div class="menu-item">
-    <?php
-        if (isset($_SESSION['client'])) {
-            echo '<a href="https://map-system-production.up.railway.app/questionnaire.php">';
-        } else {
-            echo '<a href="/connexion/login.php">';
-        }
-        ?>
+    <a href="https://map-system-production.up.railway.app/questionnaire.php">
         <img src="/images/images_ced/icone1.png" alt="Icone Questionnaire">
         </a>
         <p>Questionnaire</p>
