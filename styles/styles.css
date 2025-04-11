@@ -1,0 +1,1208 @@
+
+header {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.messageErreur{
+    color: red;
+}
+
+#messageSendTrue{
+    color: green;
+}
+
+#numberInputRegister{
+    margin-left: 150px;
+}
+
+.numberOfVisitedCountry{
+    margin-left: 50px;
+}
+
+.stat-box{
+    margin-left: 30px;
+}
+
+#recherchePays {
+    background: 0;
+    border: 0;
+    outline: none;
+    width: 120px;
+    max-width: 400px;
+    transition: padding 0.3s 0.2s ease;
+  
+    &:focus {
+      padding-bottom: 5px;
+    }
+&:focus + .line {
+    &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+    /* Style du bouton */
+    #sendButtonPays {
+        background-color: #c00000; /* Bleu */
+        color: white;
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        display: block;
+        margin: 20px auto;
+        font-weight: bold;
+    }
+
+    /* Effet hover */
+    #sendButtonPays:hover {
+        background-color: #700000; 
+        transform: scale(1.05); 
+    }
+
+    #sendButtonPays:active {
+        transform: scale(0.95);
+    }
+
+  .field {
+    position: relative;
+    transform: translateY(-20px);
+    margin: 0 auto;
+  
+    .line {
+      width: 10%;
+      height: 3px;
+      position: relative;
+      bottom: -8px;
+      background: #bdc3c7;
+  
+      &:after {
+        content: " ";
+        position: relative;
+        float: right;
+        width: 100%;
+        height: 3px;
+        
+        transform: scalex(0);
+        transition: transform 0.3s ease;
+        
+        background: #1abc9c;
+      }
+    }
+  }
+.user-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .popup-content select {
+    margin: 10px 0;
+    padding: 5px;
+  }
+  
+
+.forum {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 80px;
+}
+
+.forum p {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+
+.section_pays {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+
+}
+
+.country_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 50px;
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+#particles-js{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: fixed;
+    top: 0px;
+    z-index:1;
+}
+.nav-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+.nav-icons img {
+    width: 40px;
+    height: 40px;
+}
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.section {
+    padding: 20px;
+    background-color: white;
+    margin: 35px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición */
+}
+
+.section:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+.testimonial-section {
+    display: flex;
+    justify-content: space-between; /* Répartit les éléments enfants */
+    background-color: #d1c4a8;
+    padding: 50px;
+    margin-left: -20px; 
+    margin-right: -20px; /* Compense à droite aussi */
+    width: calc(100% + 40px); /* Élargir pour compenser les marges */
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.testimonial {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.testimonial:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+.contact-section {
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Container for the questionnaire */
+.questionnaire-section {
+padding: 20px;
+background-color: #ffffff;
+margin: 30px auto;
+width: 70%;
+max-width: 700px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading and Description */
+.questionnaire-section h2 {
+text-align: center;
+font-size: 22px;
+color: #333;
+margin-bottom: 8px;
+}
+
+.questionnaire-section p {
+text-align: center;
+font-size: 14px;
+color: #666;
+margin-bottom: 100px;
+}
+
+/* Question Styling */
+.question {
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 15px;
+padding-right: 30px;
+margin-bottom: 50px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question label {
+display: block;
+font-weight: bold;
+font-size: 15px;
+color: #333;
+margin-bottom: 6px;
+}
+
+.flag-container {
+    margin-top: 50px;
+}
+.flag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.flag-item {
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    border-radius: 8px; /* Coins arrondis pour un effet plus doux */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+.flag-item:hover {
+    transform: scale(1.1); /* Légèrement plus grand pour attirer l'attention */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile pour effet de profondeur */
+}
+
+/* Effet de sélection */
+.flag-item.selected {
+    opacity: 1; /* On garde l'opacité normale */
+    border: 3px solid #007BFF; /* Contour bleu lumineux pour indiquer la sélection */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); /* Effet lumineux */
+    transform: scale(1.1); /* Mise en avant */
+}   
+
+.flag-item:hover {
+    border-color: #333;
+}
+/* Bandeau des pays sélectionnés */
+#selectedCountriesContainer {
+position: sticky;
+top: 95px; /* Ajuste la hauteur pour laisser de la place au logo */
+width: 100%;
+background: #F0F0F0;
+padding: 15px 20px;
+text-align: center;
+color: black;
+font-weight: bold;
+font-size: 18px;
+z-index: 1000;
+display: flex;
+flex-direction: column;
+align-items: center;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+border-bottom: 2px solid #ddd; /* Légère séparation */
+}
+
+/*Liste des pays sélectionnés */
+#selectedCountriesList {
+list-style: none;
+padding: 0;
+margin-top: 10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+border-radius: 0 0 10px 10px;
+}
+
+/* Style des pays sélectionnés (colorés) */
+.selected-item {
+background: linear-gradient(45deg, red, blue);
+color: white;
+padding: 8px 15px;
+border-radius: 20px;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 8px;
+font-weight: bold;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effet au survol */
+.selected-item:hover {
+transform: scale(1.1);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Drapeaux dans la liste */
+.selected-item img {
+width: 20px;
+height: 15px;
+border-radius: 3px;
+}
+.flag-item {
+width: 100px;
+height: 70px;
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: flex-end;
+justify-content: center;
+border: 2px solid transparent;
+cursor: pointer;
+position: relative;
+margin: 5px;
+}
+
+.flag-item.selected {
+border-color: red;
+}
+
+.country-name {
+background: rgba(0, 0, 0, 0.6);
+color: white;
+font-size: 12px;
+text-align: center;
+width: 100%;
+padding: 2px;
+position: absolute;
+bottom: 0;
+}
+
+#searchBar {
+width: 100%;
+max-width: 300px;
+padding: 12px 20px;
+margin-top: 65px;
+margin-left: 40%;
+
+align-self: center;
+border: 2px solid #ddd;
+border-radius: 50px; /* Bordure arrondie pour un look moderne */
+font-size: 16px;
+font-family: 'Arial', sans-serif;
+background-color: #f5f5f5;
+color: #333;
+outline: none;
+transition: all 0.3s ease-in-out; /* Transition fluide pour les changements */
+}
+
+/* Effet de focus élégant */
+#searchBar:focus {
+border-color: #4CAF50; 
+box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); 
+background-color: #ffffff;
+transition: all 0.3s ease-in-out; /* Transition fluide */
+color: #333; 
+}
+
+/* Style de texte au focus pour un effet moderne */
+#searchBar::placeholder {
+color: #888; /* Couleur du placeholder */
+transition: color 0.3s ease-in-out;
+}
+/* Options Styling */
+.options {
+display: flex;
+flex-direction: column;
+}
+
+.options input[type="radio"] {
+color: #1abc9c;
+display: none;
+}
+
+/* Selected State - Highlight selected option in blue */
+.options input[type="radio"]:checked + label {
+background-color: #007bff;
+color: white;
+font-weight: bold;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.options label {
+background-color: #f0f0f0;
+color: #555;
+font-size: 14px;
+padding: 10px 15px;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+display: inline-block;
+text-align: center;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.options label:hover {
+background-color: #ddd;
+}
+
+/* Submit Button */
+.gradient-button {
+display: block;
+width: 100%;
+background: linear-gradient(to right, #6200ea, #b317ff);
+color: white;
+padding: 10px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+text-align: center;
+transition: background 0.3s ease;
+margin-top: 20px;
+}
+
+.gradient-button:hover {
+background: linear-gradient(to right, #5a00d8, #a315e3);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+.questionnaire-section {
+width: 90%;
+padding: 15px;
+}
+
+.gradient-button {
+font-size: 14px;
+padding: 8px;
+}
+}
+
+/* Profile Section */
+.profile {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 20px;
+border-radius: 12px;
+background-color: #f9f9f9;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+margin:50px;
+margin-top: 80px;
+}
+
+.profile-photo {
+width: 300px;
+height: 300px;
+background-color: #e0e0e0;
+border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 15px;
+font-size: 14px;
+color: #555;
+}
+
+.profile-info {
+width: 100%;
+}
+
+.username {
+font-size: 18px;
+font-weight: bold;
+color: #333;
+margin-bottom: 15px;
+padding: 8px;
+border-radius: 8px;
+background-color: #f0f0f0;
+display: inline-block;
+}
+
+.stats {
+display: flex;
+justify-content: space-around;
+margin-bottom: 15px;
+}
+
+.stat-box {
+background-color: #ffffff;
+padding: 10px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+width: 100px;
+font-size: 14px;
+}
+
+.stat-box p:first-child {
+color: #555;
+}
+
+.stat-box p:last-child {
+font-size: 18px;
+font-weight: bold;
+color: #333;
+}
+
+/* Biography Textarea */
+textarea {
+display : inline-block;
+width: 100%;
+height: 60px;
+border-radius: 8px;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ddd;
+resize: none;
+font-size: 14px;
+color: #555;
+background-color: #f9f9f9;
+}
+
+/* Logout Button */
+.logout-button {
+width: 25%;
+padding: 12px;
+font-size: 16px;
+color: white;
+background-color: #333;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+transition: background-color 0.3s ease;
+margin-top: 50px;
+}
+
+.logout-button:hover {
+background-color: #555;
+}
+
+.start-button {
+padding: 10px 20px;
+background-color: rgba(0, 128, 0, 0.7); /* Color de fondo del botón */
+color: white;
+font-size: 20px;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+h1, h2 {
+    color: #2d2d2d;
+}
+
+#infos {
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenu principal */
+main {
+    padding: 20px;
+    padding-top:60px;
+}
+
+.sources {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.sources p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.category {
+    background-color: #f9f9f9; /* Couleur de fond légèrement différente pour chaque carte */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
+    margin-bottom: 20px; /* Espace entre les cartes */
+}
+
+.category h2 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.category ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.category li {
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Maximum width of the grid */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Centers the grid horizontally */
+    padding-top:60px
+
+}
+
+
+.article-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.article-card:hover {
+    transform: scale(1.02);
+}
+
+.article-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.article-content h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.article-content h2 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.article-content h2 a:hover {
+    color: #007bff;
+}
+
+
+.pubDate {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 0.5em;
+    max-height: 3em; /* Limite la hauteur pour les longues descriptions */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 0.5em;
+    color: #007bff;
+    font-size: 0.9em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.menu-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-around; /* or space-between */
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px 20px; /* Optional padding */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixes the menu bar to the top of the viewport */
+    top: 0; /* Ensures it's at the top */
+    left: 0; /* Ensures it starts from the left edge */
+    z-index: 10000; /* Keeps it above other content */
+}
+
+
+
+.menu-item {
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu-item img {
+    width: 50px; /* Ajustez cette taille selon vos préférences */
+    height: 50px; /* Utilisez la même dimension pour uniformiser */
+    object-fit: contain; /* S'assure que l'image s'adapte sans distorsion */
+    background-color: transparent;
+}
+
+.menu-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.menu-item.logo {
+    position: relative;
+    width: 50px; /* Ajustez cette taille selon vos préférences */
+    height: 50px; /* Utilisez la même dimension pour uniformiser */
+    bottom: -10px; /* Pour centrer le logo par rapport aux autres éléments */
+    border-radius: 80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+.menu-item.logo img {
+    width: 150%; /* La imagen será más grande que el contenedor */
+    height: 150%; /* La imagen será más grande que el contenedor */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    position: absolute; /* Permite ajustar la posición dentro del contenedor */
+    top: 50%; /* Posición vertical centrada */
+    left: 50%; /* Posición horizontal centrada */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
+}
+/* Container Styles for Login and Register */
+.login-container{
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    justify-self: center;
+    justify-items: center;
+    margin: 100px auto;
+    position:relative;
+    z-index: 10;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    justify-self: center;
+    justify-items: center;
+    margin: 100px auto;
+    position:relative;
+    z-index: 10;
+
+}
+
+/* Logo Styling */
+.login-container img.logo,
+.register-container img.logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+/* Form Heading */
+.login-container h2,
+.register-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input Fields */
+.login-container input[type="text"],
+.login-container input[type="password"],
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Grouped Name Fields */
+.name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.name-fields input[type="text"] {
+    width: 100%;
+}
+
+/* Common Button Style */
+button.login-button,
+button.register-button,
+a.signup-button,
+a.back-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 400px;
+}
+
+/* Gradient Button for Connexion and S’inscrire */
+button.login-button,
+button.register-button {
+    background: linear-gradient(45deg, #EA00FF, #07BDFF);
+    color: #fff;
+    border: none;
+}
+
+button.login-button:hover,
+button.register-button:hover {
+    background: linear-gradient(45deg, #07BDFF, #EA00FF);
+}
+
+/* Black Button for Retour and S’inscrire in Login */
+a.signup-button,
+a.back-button {
+    background-color: #333;
+    color: #fff;
+}
+
+a.signup-button:hover,
+a.back-button:hover {
+    background-color: #555;
+}
+
+/* Error and Success Messages */
+.login-container div,
+.register-container div {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Link to Home Page */
+.login-container p, .register-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-container p a, .register-container p a {
+    color: #333;
+    text-decoration: none;
+}
+
+.login-container p a:hover, .register-container p a:hover {
+    text-decoration: underline;
+}
+
+.video-background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#backgroundVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Places the video behind the button */
+}
+.checkbox-group {
+    overflow-y: auto;
+    max-height: 300px;
+    width: 300px; /* Ajustado para que sea compacto */
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+}
+.checkbox-group label {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.selected-countries {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.creaprofil{
+    
+    margin-top: 100px;
+}
+#biographie{
+    display : inline-block;
+    margin-left: 10px;
+    height : 40px;
+
+}
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.chatbot-button {
+    width: 70px;
+    height: 70px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.chatbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+.chat-messages {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    max-height: 250px; 
+}
+
+
+.user-message, .bot-message {
+    max-width: 75%;
+    word-wrap: break-word;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+
+.chat-input {
+    display: flex;
+    gap: 5px;
+    padding: 8px; 
+    border-top: 1px solid #ccc;
+    width: calc(100% - 16px);
+    background: white;
+    position: sticky;
+    bottom: 0;
+    box-sizing: border-box; 
+}
+
+
+.chat-input input {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap; 
+
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.chatbot-image {
+    width: 200px; /* Ajusta el tamaño de la imagen según necesites */
+    height: auto;
+    display: flex;
+    margin: 10px auto; /* Centra la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.next-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+.graph_avis button {
+    padding: 8px 16px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.graph_avis button:hover {
+    background-color: #45a049;
+}
+
+.chart-container {
+    width: 50%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.titre_graph{
+    margin-top:5%;
+}
