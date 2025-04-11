@@ -399,7 +399,7 @@ html_content = f"""
     {custom_css}  
 </head>
 <body>
-    <?php include('../navbar.php'); ?>
+    <?php include('navbar.php'); ?>
 
     <h1>🌍 Trouve ton pays ✈️</h1>
     <p>Cliquez sur un pays pour explorer ses données</p>
