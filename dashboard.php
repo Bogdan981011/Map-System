@@ -382,22 +382,26 @@
     }
     $country = $_GET['country'];
 
-    // Build the URL to data_graph.php with the country parameter
-    $dataGraphUrl = "http://localhost/payspedia_v2/pageweb/datavizio/data_graph.php?country=" . urlencode($country);
+    // Start output buffering so we capture the JSON output from data_graph.php
+    ob_start();
+    include 'data_graph.php';
+    $jsonResult = ob_get_clean();
 
-    // Fetch the JSON data from data_graph.php
-    $jsonData = file_get_contents($dataGraphUrl);
-    if ($jsonData === false) {
-        die("Error fetching data from data_graph.php");
+    // Trim the result to remove any stray whitespace
+    $jsonResult = trim($jsonResult);
+
+    if ($jsonResult === null) {
+      error_log("Error decoding JSON: " . json_last_error_msg());
+      die("Error decoding JSON: " . json_last_error_msg());
     }
 
     // Optionally, log or process the fetched JSON data
-    error_log("Data received from data_graph.php: " . $jsonData);
+    error_log("Data received from data_graph.php: " . $jsonResult);
 
     // Output the JSON data (or further process it as needed)
     header('Content-Type: text/html');
     // Getting data
-    $data = json_decode($jsonData, true);
+    $data = json_decode($jsonResult, true);
 
   ?>
 
