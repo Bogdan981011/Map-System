@@ -375,40 +375,31 @@
   <!-- PHP: Checking for "country" and fetching data (same as your original code) -->
   <?php
 
-    // include navbar.php
+    include 'navbar.php';
 
-    // Check for 'country' parameter in the URL.
     if (!isset($_GET['country'])) {
-      error_log("Dashboard Error: Missing 'country' parameter in URL.");
-      die("No country specified.");
+        die("No country specified.");
     }
     $country = $_GET['country'];
 
-    // Start output buffering to capture data_graph.php output.
-    ob_start();
-    include 'data_graph.php';
-    $jsonResult = ob_get_clean();
+    // Build the URL to data_graph.php with the country parameter
+    $dataGraphUrl = "http://localhost/payspedia_v2/pageweb/datavizio/data_graph.php?country=" . urlencode($country);
 
-    // Decode the JSON response.
-    $jsonData = json_decode($jsonResult, true);
-    if ($jsonData === null) {
-      $jsonError = json_last_error_msg();
-      error_log("Dashboard JSON Error: " . $jsonError);
-      die("Error decoding JSON: " . $jsonError);
+    // Fetch the JSON data from data_graph.php
+    $jsonData = file_get_contents($dataGraphUrl);
+    if ($jsonData === false) {
+        die("Error fetching data from data_graph.php");
     }
 
-    // Log the structured data
-    error_log("Data received from data_graph.php: " . print_r($jsonData, true));
+    // Optionally, log or process the fetched JSON data
+    error_log("Data received from data_graph.php: " . $jsonData);
 
-    // Output the page as HTML.
+    // Output the JSON data (or further process it as needed)
     header('Content-Type: text/html');
+    // Getting data
+    $data = json_decode($jsonData, true);
 
-    // Use the already-decoded data.
-    $data = $jsonData;
-
-    // Continue with your dashboard code that uses $data...
   ?>
-
 
   <header>
     <h1>Tableau de Bord Intéractif</h1>
@@ -2716,6 +2707,7 @@ function initializeHistogramChartV2(config) {
   // ===================== Main Script =====================
 
     var chartData = <?php echo json_encode($data); ?>;
+    console.log(chartData);
 
     // Example usage of your existing chart initialization functions:
     var barChart = initializeDynamicChartV3({
