@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <header>
     <div class="menu-bar">
     <div class="menu-item">
