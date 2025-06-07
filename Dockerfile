@@ -25,3 +25,5 @@ EXPOSE 8000
 
 # Start the PHP built-in server
 CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t ."]
+
+
