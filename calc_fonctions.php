@@ -287,7 +287,7 @@ function calculateScoresDebug($questions, $data) {
             $countryScores['Turkey'] = $countryScores['Türkiye'];
             unset($countryScores['Türkiye']);
         } else {
-            error_log("The key 'Türkiye' does not exist in the array.");
+            //error_log("The key 'Türkiye' does not exist in the array.");
         }
     }
 
